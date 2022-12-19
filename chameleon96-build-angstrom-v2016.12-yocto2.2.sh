@@ -10,6 +10,8 @@ NC='\033[0m' # No Color
 ANG_DIR=angstrom-v2016.12-yocto2.2
 MAN_DIR=angstrom-manifest
 
+PATH=~/.bin/:$PATH
+
 echo -e ${GREEN}
 echo "*************************************************************"
 echo "This script will create an ${ANG_DIR}/${MAN_DIR} directory   "
@@ -64,6 +66,7 @@ echo "* Setting up environment...                                   *"
 echo "***************************************************************"
 echo -e ${NC}
 
+chmod +x setup-environment
 MACHINE=chameleon96 . ./setup-environment
 
 echo -e ${GREEN}
