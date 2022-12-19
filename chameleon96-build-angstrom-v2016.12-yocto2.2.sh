@@ -31,7 +31,7 @@ echo "***************************************************************"
 echo -e ${NC}
 
 # Clone Angstrom repo
-repo init -u git://github.com/Angstrom-distribution/angstrom-manifest -b angstrom-v2016.12-yocto2.2
+repo init -u https://github.com/Angstrom-distribution/angstrom-manifest -b angstrom-v2016.12-yocto2.2
 
 echo -e ${GREEN}
 echo "***************************************************************"
@@ -39,8 +39,8 @@ echo "* Configuring local manifests...                              *"
 echo "***************************************************************"
 echo -e ${NC}
 
-wget https://raw.githubusercontent.com/dnegvesky/chameleon96/master/chameleon96_manifest.xml
-mkdir .repo/local_manifests
+wget https://raw.githubusercontent.com/mrmoritz01/chameleon96/master/chameleon96_manifest.xml
+mkdir -p .repo/local_manifests
 mv chameleon96_manifest.xml .repo/local_manifests
 
 #sed -i '/meta-altera/a \ \ \$\{TOPDIR\}\/layers\/meta-chameleon96 \\' .repo/manifests/conf/bblayers.conf
